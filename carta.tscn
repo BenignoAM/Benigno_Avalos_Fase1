@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c3iedmgxbuu5i"]
+
+[ext_resource type="Texture2D" uid="uid://dwwp8st52u1oj" path="res://image_back.jpg" id="1_4gtqo"]
+[ext_resource type="Script" uid="uid://c8y62jxfu51ta" path="res://carta.gd" id="1_77s45"]
+[ext_resource type="Texture2D" uid="uid://bivkqanq8kfhi" path="res://imagen1.jpg" id="2_77s45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdqn8"]
+size = Vector2(198, 281)
+
+[node name="Carta" type="Area2D" unique_id=544579615]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_77s45")
+
+[node name="Dorso" type="Sprite2D" parent="." unique_id=757216146]
+texture = ExtResource("1_4gtqo")
+
+[node name="Frente" type="Sprite2D" parent="." unique_id=1515191575]
+visible = false
+scale = Vector2(0.19217347, 0.19616465)
+texture = ExtResource("2_77s45")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286947660]
+shape = SubResource("RectangleShape2D_kdqn8")

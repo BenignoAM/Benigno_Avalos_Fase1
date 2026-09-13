@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b1x2brm4s854c"]
+
+[ext_resource type="Script" uid="uid://lb7mi5mxihh3" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bar858liwh5n3" path="res://table2.jpg" id="2_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dwwp8st52u1oj" path="res://image_back.jpg" id="3_7mycd"]
+[ext_resource type="AudioStream" uid="uid://edhrb4c3gr72" path="res://whoosh.wav" id="4_272bh"]
+
+[sub_resource type="Gradient" id="Gradient_5vw27"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.18181819, 0.36363637, 0.54545456, 0.72727275, 0.90909094)
+colors = PackedColorArray(1, 0, 0, 1, 0, 0.17859256, 0.99999946, 1, 1.1551381e-06, 0.5821229, 0.10184357, 1, 0.8109998, 0.12422595, 0.99999994, 1, 0.99999994, 0.09528013, 0.6313122, 1, 0.77871513, 0.48911232, 0.104534216, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 11
+
+[node name="Main" type="Node2D" unique_id=176167664]
+script = ExtResource("1_1bvp3")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1740538199]
+scale = Vector2(0.73, 0.76)
+texture = ExtResource("2_lquwl")
+
+[node name="BarajaBoton" type="TextureButton" parent="." unique_id=801381408]
+offset_left = -49.0
+offset_top = -69.0
+offset_right = 150.0
+offset_bottom = 213.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_7mycd")
+
+[node name="WhooshAudio" type="AudioStreamPlayer2D" parent="." unique_id=841420834]
+stream = ExtResource("4_272bh")
+
+[node name="Confeti" type="CPUParticles2D" parent="." unique_id=1433653251]
+emitting = false
+amount = 150
+one_shot = true
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+direction = Vector2(0, 1)
+gravity = Vector2(0, 98)
+initial_velocity_min = 150.0
+initial_velocity_max = 300.0
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+color_ramp = SubResource("Gradient_5vw27")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1246289951]
+
+[node name="Panel" type="Panel" parent="UI" unique_id=1290848367]
+offset_right = 1233.0
+offset_bottom = 791.0
+
+[node name="Label" type="Label" parent="UI/Panel" unique_id=1965371975]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -113.5
+offset_top = 159.0
+offset_right = 113.5
+offset_bottom = 222.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 45
+text = "GANASTE!!"
+
+[node name="Button" type="Button" parent="UI/Panel" unique_id=1682571654]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.5
+offset_top = -58.0
+offset_right = 117.5
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "	Jugar de nuevo"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1740683610]
